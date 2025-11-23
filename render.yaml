@@ -44,11 +44,11 @@ services:
           property: connectionString
     dockerCommand: bundle exec sidekiq -r ./config/sidekiq.rb
 
-- type: keyvalue
-  name: terminus-cache
-  plan: free
-  ipAllowList:
-    - source: 0.0.0.0/0
-      description: "allow all external access"
-  maxmemoryPolicy: allkeys-lru   
+  - type: keyvalue
+    name: terminus-cache
+    plan: free
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: "allow all external access"
+    maxmemoryPolicy: allkeys-lru   
 
